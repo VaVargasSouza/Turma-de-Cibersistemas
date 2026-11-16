@@ -1,0 +1,564 @@
+:root {
+    --fundo: #111111;
+    --fundo-secundario: #191919;
+    --cartao: #202020;
+    --borda: #343434;
+    --laranja: #ff7900;
+    --laranja-claro: #ff9b3d;
+    --texto: #f5f5f5;
+    --texto-secundario: #b8b8b8;
+    --erro: #ff5b5b;
+    --sucesso: #55d98b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 6%;
+    background: #080808;
+    border-bottom: 3px solid var(--laranja);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 90px;
+    max-height: 65px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.marca h1 {
+    margin: 0;
+    font-size: 1.45rem;
+}
+
+.marca p {
+    margin: 0;
+    color: var(--laranja);
+}
+
+.usuario-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: var(--texto-secundario);
+    overflow-wrap: anywhere;
+}
+
+.conteudo {
+    width: min(1100px, 92%);
+    margin: 35px auto;
+}
+
+.boas-vindas {
+    padding: 35px;
+    margin-bottom: 28px;
+    background: linear-gradient(135deg, #242424, #151515);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--laranja);
+    border-radius: 14px;
+}
+
+.etiqueta {
+    color: var(--laranja);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.boas-vindas h2 {
+    margin: 12px 0;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.boas-vindas p,
+.titulo-secao p {
+    color: var(--texto-secundario);
+    margin: 0;
+}
+
+.painel {
+    padding: 25px;
+    margin-bottom: 25px;
+    background: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.titulo-secao h2 {
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.icone {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(255, 121, 0, 0.13);
+    color: var(--laranja);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #151515;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+.formulario label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    color: var(--texto);
+    background: #252525;
+    border: 1px solid #444;
+    border-radius: 8px;
+    outline: none;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--laranja);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.acoes-formulario,
+.acoes-escala {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.btn-laranja {
+    color: #171717;
+    background: var(--laranja);
+}
+
+.btn-secundario {
+    color: var(--texto);
+    background: #292929;
+    border-color: #444;
+}
+
+.lista-cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    gap: 15px;
+}
+
+.cartao {
+    min-width: 0;
+    padding: 18px;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.cartao h3 {
+    margin-top: 0;
+    color: var(--laranja-claro);
+}
+
+.cartao p {
+    white-space: pre-wrap;
+}
+
+.meta {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+}
+
+.link-externo {
+    color: var(--laranja-claro);
+    overflow-wrap: anywhere;
+}
+
+.acoes-cartao {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.acoes-cartao button {
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--borda);
+    color: var(--texto);
+    background: #303030;
+}
+
+.equipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.cartao-equipe {
+    padding: 18px;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+.cartao-equipe.atual {
+    border: 2px solid var(--laranja);
+    box-shadow: 0 0 18px rgba(255, 121, 0, 0.08);
+}
+
+.cartao-equipe h3 {
+    margin-top: 0;
+    color: var(--laranja);
+}
+
+.cartao-equipe ol {
+    padding-left: 22px;
+}
+
+.cartao-equipe li {
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.mensagem {
+    min-height: 1.5em;
+    color: var(--texto-secundario);
+}
+
+.mensagem.erro {
+    color: var(--erro);
+}
+
+.mensagem.sucesso {
+    color: var(--sucesso);
+}
+
+.oculto {
+    display: none !important;
+}
+
+.rodape {
+    padding: 25px;
+    text-align: center;
+    color: var(--texto-secundario);
+    background: #080808;
+    border-top: 1px solid var(--borda);
+}
+
+@media (max-width: 760px) {
+    .equipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho {
+        align-items: flex-start;
+    }
+
+    .boas-vindas,
+    .painel {
+        padding: 20px;
+    }
+
+    .usuario-area {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* =========================================================
+   CONFIRMAÇÃO DA EQUIPE ATUAL
+   ========================================================= */
+
+.texto-confirmacao {
+    margin: 6px 0 18px;
+    color: #bdbdbd;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* Lista dos alunos */
+.lista-confirmacao-equipe {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0 20px;
+}
+
+/* Cada aluno */
+.aluno-confirmacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    background: #171717;
+    border: 1px solid #2b2b2b;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+/* Hover */
+.aluno-confirmacao:hover {
+    background: #1e1e1e;
+    border-color: #f58220;
+    transform: translateY(-1px);
+}
+
+/* Checkbox */
+.aluno-confirmacao input[type="checkbox"] {
+    appearance: none;
+
+    width: 21px;
+    height: 21px;
+
+    min-width: 21px;
+
+    border: 2px solid #777;
+    border-radius: 6px;
+
+    background: #111;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Checkbox marcado */
+.aluno-confirmacao input[type="checkbox"]:checked {
+    background: #f58220;
+    border-color: #f58220;
+    box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.12);
+}
+
+/* Check */
+.aluno-confirmacao input[type="checkbox"]:checked::after {
+    content: "✓";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -55%);
+
+    color: #111;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+/* Nome */
+.aluno-confirmacao span {
+    flex: 1;
+
+    color: #f2f2f2;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Estado do aluno */
+.aluno-confirmacao::after {
+    content: "Limpou";
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    color: #f58220;
+
+    background: rgba(245, 130, 32, 0.10);
+
+    border: 1px solid rgba(245, 130, 32, 0.25);
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Quando desmarcado */
+.aluno-confirmacao:has(input:not(:checked)) {
+    background: #151515;
+    border-color: #333;
+}
+
+.aluno-confirmacao:has(input:not(:checked))::after {
+    content: "Pendente";
+
+    color: #aaa;
+
+    background: #222;
+
+    border-color: #333;
+}
+
+.aluno-confirmacao:has(input:not(:checked)) span {
+    color: #aaa;
+}
+
+/* Botão */
+.btn-confirmar-limpeza {
+    width: 100%;
+
+    border: none;
+
+    padding: 13px 18px;
+
+    border-radius: 9px;
+
+    background: #f58220;
+    color: #111;
+
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-confirmar-limpeza:hover {
+    background: #ff962f;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 18px rgba(245, 130, 32, 0.20);
+}
+
+.btn-confirmar-limpeza:active {
+    transform: translateY(0);
+}
+
+.btn-confirmar-limpeza:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Destaque do cartão da equipe atual */
+.cartao-equipe.atual {
+    border-color: rgba(245, 130, 32, 0.45);
+
+    box-shadow:
+        0 0 0 1px rgba(245, 130, 32, 0.08),
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Título da equipe atual */
+.cartao-equipe.atual h3 {
+    color: #f58220;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+
+    .aluno-confirmacao {
+        padding: 12px;
+    }
+
+    .aluno-confirmacao span {
+        font-size: 0.88rem;
+    }
+
+    .aluno-confirmacao::after {
+        font-size: 0.65rem;
+        padding: 4px 7px;
+    }
+
+    .btn-confirmar-limpeza {
+        padding: 12px;
+    }
+}

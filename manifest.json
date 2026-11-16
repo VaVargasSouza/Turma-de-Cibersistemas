@@ -1,0 +1,23 @@
+
+{
+    "name": "Portal da Turma de Cibersistemas",
+    "short_name": "Cibersistemas",
+    "description": "Portal da Turma de Cibersistemas - SENAI",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#111111",
+    "theme_color": "#111111",
+    "icons": [
+        {
+            "src": "./Favicon-Cibersistemas.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./Favicon-Cibersistemas.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
